@@ -1,16 +1,22 @@
 package de.afrouper.gateway.router.locator;
 
+import de.afrouper.gateway.router.routing.DynamicBackendUriFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
 public class RouteServiceImpl implements RouteService {
-    //ToDo: Use Repository
+    //ToDo: Use Repository or consul
     //https://anjireddy-kata.medium.com/spring-cloud-gateway-dynamic-route-configuration-and-loading-from-the-datastore-a0637e6bd9b4
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DynamicBackendUriFilter.class);
 
     @Override
     public Flux<ApiRoute> getAll() {
+        LOGGER.debug("RouteServiceImpl::getAll called.");
         return Flux.just(createApi(), createApi2(), createApi3());
         //return this.routeRepository.findAll();
     }
