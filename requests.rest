@@ -1,0 +1,14 @@
+### Refresh Routes
+POST http://localhost:8081/actuator/routes
+
+### Simple GET
+GET http://localhost:8080/anything
+
+### Simple POST
+POST http://localhost:8080/anything
+
+### Post with short ID
+POST http://localhost:8080/test/4711/person/steve
+
+### Post with long ID
+POST http://localhost:8080/test/foo/GWGBUEDR/person/steve
