@@ -1,3 +1,15 @@
+spring:
+  application:
+    name: gateway-locator
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
 management:
   server:
     port: 8081
