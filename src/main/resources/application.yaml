@@ -1,10 +1,19 @@
+spring:
+  cloud:
+    discovery:
+      enabled: false
+    service-registry:
+      auto-registration:
+        enabled: false
+
 management:
   server:
     port: 8081
   endpoints:
     web:
       exposure:
-        include: health, routes
+        include: health,routes
+
 logging:
   level:
     de.afrouper.gateway: debug
