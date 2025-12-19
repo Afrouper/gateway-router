@@ -5,6 +5,9 @@ spring:
     consul:
       discovery:
         enabled: true
+    service-registry:
+      auto-registration:
+        enabled: false
     gateway:
       discovery:
         locator:
@@ -16,7 +19,8 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, routes
+        include: health,routes
+
 logging:
   level:
     de.afrouper.gateway: debug
